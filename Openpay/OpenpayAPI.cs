@@ -35,9 +35,9 @@ namespace Openpay
 
         private OpenpayHttpClient httpClient;
 
-        public OpenpayAPI( string api_key, string merchant_id,bool production = false)
+        public OpenpayAPI( string api_key, string merchant_id, bool production = false, string country_code = "mx")
         {
-            this.httpClient = new OpenpayHttpClient(api_key, merchant_id, production);
+            this.httpClient = new OpenpayHttpClient(api_key, merchant_id, production, country_code);
             CustomerService = new CustomerService(this.httpClient);
             CardService = new CardService(this.httpClient);
             BankAccountService = new BankAccountService(this.httpClient);
